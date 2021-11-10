@@ -30,7 +30,7 @@ public interface EtudiantRepository extends JpaRepository <Etudiant, Long>{
     @Query("select e from Etudiant e where e.moyenne = (select max(e.moyenne) from Etudiant e)")
     List<Etudiant> findEtudMaxMoy();
 
-    @Query("select count(e.iddepartement.idDepartement) from Etudiant e group by e.iddepartement.idDepartement")
+    @Query("select count(e.iddepartement) from Etudiant e group by e.iddepartement")
     List<Long> findEtudNumberDept();
 
     @Query(value = "select e.niveau from etudiant e group by e.niveau having count(e.niveau) in (select max(cniveau) from (select count(e.niveau) as cniveau from etudiant e group by e.niveau)c)",nativeQuery = true)

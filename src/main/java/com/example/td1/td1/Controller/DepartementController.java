@@ -38,4 +38,35 @@ public class DepartementController {
     {
         return dt.findDeptMinEtud();
     }*/
+
+    /*@GetMapping("/Q3")
+    public List<Departement> afficherDeptMaxEtud()
+    {
+        return dt.findDeptMaxEtud();
+    }*/
+
+    @GetMapping("/Q4")
+    public List<Departement> afficherDeptMaxEtud()
+    {
+        return dt.findDeptNoEtud();
+    }
+
+    @GetMapping("/Q5")
+    public List<Departement> afficherDepBestEtud()
+    {
+        return dt.findDepBestEtud();
+    }
+
+    @GetMapping("/Q6")
+    public List<Departement> afficherDepBestAvg()
+    {
+        return dt.findDepBestAvg();
+    }
+
+    @GetMapping("/Q7")
+    public List<Departement> afficherDepMoyValid()
+    {
+        return dt.findDepMoyValid();
+    }
+
 }

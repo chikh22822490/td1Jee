@@ -11,8 +11,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface SpecialiteRepository extends JpaRepository <Specialite, Long> {
 
-    //@Query("select e.niveau from Etudiant e group by e.specialite")
-    //List<Long> findNivSpec();
+    @Query("select e.niveau from Etudiant e group by e.niveau, e.idspecialite")
+    List<Long> findNivSpec();
 
     
     
