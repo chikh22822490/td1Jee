@@ -36,13 +36,7 @@ public class EtudiantController {
     @GetMapping("/Q2")
     public List<Etudiant> afficherByNameL()
     {
-        return et.findByNameL("%L%");//"_L%", "%L","%L_",*//*,"_M%","%M","%M_","%M%"
-    }
-    
-    @GetMapping("/Q3")
-    public List<Etudiant> afficherByNameM()
-    {
-        return et.findByNameM("%M%");//"_L%", "%L","%L_",*//*,"_M%","%M","%M_","%M%"
+        return et.findByNomEContainingAndNomEContaining("L","M");
     }
 
     @GetMapping("/Q4")
